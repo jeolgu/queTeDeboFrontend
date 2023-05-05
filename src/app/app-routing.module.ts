@@ -7,6 +7,7 @@ import { LoginComponent} from './login/login.component';
 import { CrearUsuarioComponent} from './crear-usuario/crear-usuario.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   { path: 'inicio', component: InicioComponent },
   { path: 'quienes-somos', component: QuienesSomosComponent },
   { path: 'contacto', component: ContactoComponent },
