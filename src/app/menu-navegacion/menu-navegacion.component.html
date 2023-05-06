@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div>
+        <a routerLink="/home">Owner-Account</a>
+    </div>
+    <div>
+        <a routerLink="/inicio" routerLinkActive="active" ariaCurrentWhenActive="page">Inicio</a>
+    </div>
+    <div>
+        <a routerLink="/quienes-somos" routerLinkActive="active" ariaCurrentWhenActive="page">Quienes Somos</a>
+    </div>
+    <div>
+        <a routerLink="/contacto" routerLinkActive="active" ariaCurrentWhenActive="page">Contacto</a>
+    </div>
+    <div>
+        <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a>
+    </div>    
+    <!-- <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li><a routerLink="/inicio" routerLinkActive="active" ariaCurrentWhenActive="page">Inicio</a></li>
+            <li><a routerLink="/quienes-somos" routerLinkActive="active" ariaCurrentWhenActive="page">Quienes Somos</a></li>
+        </ul>
+    </div>-->
+  </mat-toolbar>

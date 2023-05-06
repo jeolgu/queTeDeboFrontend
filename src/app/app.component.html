@@ -1,3 +1,5 @@
+<app-menu-navegacion></app-menu-navegacion>
+
 <h1>Que te debo!</h1>
 <nav>
     <ul>
@@ -9,7 +11,8 @@
 </nav>
 
 
-<button mat-button [matMenuTriggerFor]="quienes-somos">Quienes somos</button>
+<!-- <button mat-button [matMenuTriggerFor]="quienes-somos">Quienes somos</button> -->
+<button mat-button matMenuTriggerFor="quienes-somos">Quienes somos</button>
 
 <!-- The routed views render in the <router-outlet>-->
 <router-outlet></router-outlet>
