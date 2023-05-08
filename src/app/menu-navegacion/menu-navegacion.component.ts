@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TranslateConfigService } from '../translate-config.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-menu-navegacion',
@@ -6,9 +8,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-navegacion.component.scss']
 })
 export class MenuNavegacionComponent {
+  //public lang : any;
 
-  
-public onToggleSidenav = () => { 
-}
+  constructor(
+    private translateConfigService : TranslateConfigService,
+    private translate: TranslateService
+    ){
+  }
+
+  onInit(){
+    console.log("HOLA");
+    // this.translateConfigService.getDefaultLanguage();
+    // this.lang = this.translateConfigService.getCurrentLang();
+  }
+
+  public onToggleSidenav = () => {
+    alert('hola');
+  }
 }
 

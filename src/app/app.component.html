@@ -10,9 +10,12 @@
     </ul>
 </nav>-->
 
-
 <!-- <button mat-button [matMenuTriggerFor]="quienes-somos">Quienes somos</button> -->
 <!--<button mat-button matMenuTriggerFor="quienes-somos">Quienes somos</button> -->
 
-<!-- Aquí cargará la app -->
-<router-outlet></router-outlet>
+<!-- Aquí cargará la app // se resta 64px del menu y 64px del footer -->
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer>Aquí va el footer</footer>
