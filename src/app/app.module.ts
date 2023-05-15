@@ -23,6 +23,13 @@ import { LoginComponent } from './login/login.component';
 import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
 import { MenuNavegacionComponent } from './menu-navegacion/menu-navegacion.component';
 import { CrearPagoComponent } from './crear-pago/crear-pago.component';
+import { CrearComponent } from './usuario/crear/crear.component';
+import { DatosPersonalesComponent } from './usuario/datos-personales/datos-personales.component';
+import { CambioPassComponent } from './usuario/cambio-pass/cambio-pass.component';
+import { EnviadosComponent } from './cobros/activos/enviados/enviados.component';
+import { RecibidosComponent } from './cobros/activos/recibidos/recibidos.component';
+import { ArchivadosComponent } from './cobros/archivados/archivados.component';
+import { CobroComponent } from './cobros/cobro/cobro.component';
 
 //eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 export function createTranslateLoader(http: HttpClient) {
@@ -39,7 +46,14 @@ export function createTranslateLoader(http: HttpClient) {
     LoginComponent,
     CrearUsuarioComponent,
     MenuNavegacionComponent,
-    CrearPagoComponent
+    CrearPagoComponent,
+    CrearComponent,
+    DatosPersonalesComponent,
+    CambioPassComponent,
+    EnviadosComponent,
+    RecibidosComponent,
+    ArchivadosComponent,
+    CobroComponent
   ],
   imports: [
     BrowserModule,
