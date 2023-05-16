@@ -4,7 +4,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { QuienesSomosComponent} from './quienes-somos/quienes-somos.component';
 import { ContactoComponent} from './contacto/contacto.component';
 import { LoginComponent} from './login/login.component';
-import { CrearUsuarioComponent} from './crear-usuario/crear-usuario.component';
+import { CrearUsuarioComponent} from './usuario/crear/crear.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },

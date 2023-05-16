@@ -20,10 +20,9 @@ import { InicioComponent } from './inicio/inicio.component';
 import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { LoginComponent } from './login/login.component';
-import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
 import { MenuNavegacionComponent } from './menu-navegacion/menu-navegacion.component';
-import { CrearPagoComponent } from './crear-pago/crear-pago.component';
-import { CrearComponent } from './usuario/crear/crear.component';
+import { CrearCobroComponent } from './cobros/crear/crear.component';
+import { CrearUsuarioComponent } from './usuario/crear/crear.component';
 import { DatosPersonalesComponent } from './usuario/datos-personales/datos-personales.component';
 import { CambioPassComponent } from './usuario/cambio-pass/cambio-pass.component';
 import { EnviadosComponent } from './cobros/activos/enviados/enviados.component';
@@ -44,10 +43,9 @@ export function createTranslateLoader(http: HttpClient) {
     QuienesSomosComponent,
     ContactoComponent,
     LoginComponent,
-    CrearUsuarioComponent,
     MenuNavegacionComponent,
-    CrearPagoComponent,
-    CrearComponent,
+    CrearCobroComponent,
+    CrearUsuarioComponent,
     DatosPersonalesComponent,
     CambioPassComponent,
     EnviadosComponent,
