@@ -29,6 +29,6 @@ export class DatosPersonalesService {
     const parametros = new HttpParams()
       .set("datos_personales", JSON.stringify(datos_personales));
 
-    return this.http.put<any>(`${URL}/user/datos-personales`, parametros, { headers });
+    return this.http.put<IUsuario>(`${URL}/user/datos-personales`, parametros, { headers });
   }
 }
