@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { FlexLayoutModule } from "@angular/flex-layout";
+
 // import { HttpClient } from '@angular/common/http';
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 
@@ -12,15 +14,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { InicioComponent } from './inicio/inicio.component';
-import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
-import { ContactoComponent } from './contacto/contacto.component';
+import { InicioComponent } from './web/inicio/inicio.component';
+import { QuienesSomosComponent } from './web/quienes-somos/quienes-somos.component';
+import { ContactoComponent } from './web/contacto/contacto.component';
 import { LoginComponent } from './login/login.component';
-import { MenuNavegacionComponent } from './menu-navegacion/menu-navegacion.component';
+
 import { CrearCobroComponent } from './cobros/crear/crear.component';
 import { CrearUsuarioComponent } from './usuario/crear/crear.component';
 import { DatosPersonalesComponent } from './usuario/datos-personales/datos-personales.component';
@@ -43,7 +46,6 @@ export function createTranslateLoader(http: HttpClient) {
     QuienesSomosComponent,
     ContactoComponent,
     LoginComponent,
-    MenuNavegacionComponent,
     CrearCobroComponent,
     CrearUsuarioComponent,
     DatosPersonalesComponent,
@@ -60,8 +62,10 @@ export function createTranslateLoader(http: HttpClient) {
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
+    MatListModule,
     MatButtonModule,
     HttpClientModule,
+    FlexLayoutModule,
     TranslateModule.forRoot({
       defaultLanguage: "en",
       loader: {

@@ -1,4 +1,46 @@
-<app-menu-navegacion></app-menu-navegacion>
+<div>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button
+        mat-icon-button
+        (click)="sidenav.toggle()"
+        fxShow="true"
+        fxHide.gt-sm
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Que te debo</span>
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md>
+        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+        <a routerLink="/inicio" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>{{ "INICIO" | translate }}</a>
+        <a routerLink="/quienes-somos" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Quienes Somos</a>
+        <a routerLink="/contacto" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Contacto</a>
+        <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Login</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <!--<a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>-->
+        <a routerLink="/inicio" routerLinkActive="active" ariaCurrentWhenActive="page" mat-list-item>Inicio</a>
+        <a routerLink="/quienes-somos" routerLinkActive="active" ariaCurrentWhenActive="page" mat-list-item>Quienes Somos</a>
+        <a routerLink="/contacto" routerLinkActive="active" ariaCurrentWhenActive="page" mat-list-item>Contacto</a>
+        <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" mat-list-item>Login</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content fxFlexFill>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <footer fxflexFill>Aquí va el footer</footer>
+</div>
 <!--
 <h1>Que te debo!</h1>
 <nav>
@@ -14,8 +56,10 @@
 <!--<button mat-button matMenuTriggerFor="quienes-somos">Quienes somos</button> -->
 
 <!-- Aquí cargará la app // se resta 64px del menu y 64px del footer -->
-<main>
-  <router-outlet></router-outlet>
-</main>
-
-<footer>Aquí va el footer</footer>
+<!-- <mat-sidenav-container fxFlexFill>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+    <footer>Aquí va el footer</footer>
+  </mat-sidenav-container>
+</div>-->

@@ -1,14 +1,15 @@
-mat-sidenav-container, mat-sidenav-content, mat-sidenav {
-    height: 100%;
-}
-
-mat-sidenav {
-    width: 250px;
-}
-
 main {
-    padding: 10px;
-    height: calc(100% - 148px);
+  // padding: 10px;
+  height: calc(100vh - 144px);
+}
+
+// PARA PONER EL MENU A LA IZQUIERDA
+// .menu-spacer {
+//   flex: 1 1 auto;
+// }
+
+a{
+  text-decoration: none;
 }
 
 footer{

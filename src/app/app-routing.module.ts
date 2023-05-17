@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InicioComponent } from './inicio/inicio.component';
-import { QuienesSomosComponent} from './quienes-somos/quienes-somos.component';
-import { ContactoComponent} from './contacto/contacto.component';
-import { LoginComponent} from './login/login.component';
-import { CrearUsuarioComponent} from './usuario/crear/crear.component';
+import { CommonModule } from '@angular/common';
+import { InicioComponent } from './web/inicio/inicio.component';
+import { QuienesSomosComponent } from './web/quienes-somos/quienes-somos.component';
+import { ContactoComponent } from './web/contacto/contacto.component';
+import { LoginComponent } from './login/login.component';
+import { CrearUsuarioComponent } from './usuario/crear/crear.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
@@ -16,7 +17,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [CommonModule, RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+  declarations: []
 })
 export class AppRoutingModule { }
