@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { InicioComponent } from './web/inicio/inicio.component';
 import { QuienesSomosComponent } from './web/quienes-somos/quienes-somos.component';
 import { ContactoComponent } from './web/contacto/contacto.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './usuario/login/login.component';
 import { CrearUsuarioComponent } from './usuario/crear/crear.component';
 
 const routes: Routes = [
