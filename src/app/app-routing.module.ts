@@ -13,6 +13,8 @@ import { ActivosRecibidosComponent } from './cobros/activos/recibidos/recibidos.
 import { HistoricoEnviadosComponent } from './cobros/historico/enviados/enviados.component';
 import { HistoricoRecibidosComponent } from './cobros/historico/recibidos/recibidos.component';
 import { ArchivadosComponent } from './cobros/archivados/archivados.component';
+import { CambioPassComponent } from './usuario/cambio-pass/cambio-pass.component';
+import { DatosPersonalesComponent } from './usuario/datos-personales/datos-personales.component';
 
 
 const routes: Routes = [
@@ -27,7 +29,9 @@ const routes: Routes = [
   { path: 'activos-recibidos', component: ActivosRecibidosComponent },
   { path: 'historico-enviados', component: HistoricoEnviadosComponent },
   { path: 'historico-recibidos', component: HistoricoRecibidosComponent },
-  { path: 'archivados', component: ArchivadosComponent }
+  { path: 'archivados', component: ArchivadosComponent },
+  { path: 'modificar-pass', component: CambioPassComponent },
+  { path: 'datos-personales', component: DatosPersonalesComponent }
 ];
 
 @NgModule({

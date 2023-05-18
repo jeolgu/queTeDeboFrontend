@@ -33,6 +33,12 @@
         <a routerLink="/crear-usuario" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Crear Usuario</a>
         <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Login</a>
 
+        <a mat-button routerLinkActive="active" ariaCurrentWhenActive="page" [matMenuTriggerFor]="menuAjustes" fxHide.lt-md>Ajustes</a>
+        <mat-menu #menuAjustes="matMenu" xPosition="after">
+          <a routerLink="/moificar-pass" routerLinkActive="active" ariaCurrentWhenActive="page" mat-menu-item>Cambio contraseña</a>
+          <a routerLink="/datos-personales" routerLinkActive="active" ariaCurrentWhenActive="page" mat-menu-item>Datos personales</a>
+        </mat-menu>
+
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
@@ -47,6 +53,43 @@
         <a routerLink="/quienes-somos" routerLinkActive="active" ariaCurrentWhenActive="page" mat-list-item>Quienes Somos</a>
         <a routerLink="/contacto" routerLinkActive="active" ariaCurrentWhenActive="page" mat-list-item>Contacto</a>
         <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" mat-list-item>Login</a>
+
+        <span mat-list-item>Cobros</span>
+        <mat-expansion-panel [class.mat-elevation-z0]="true">
+          <mat-expansion-panel-header>
+              Activos
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+              <a mat-list-item routerLink="/activos-enviados" routerLinkActive="active" ariaCurrentWhenActive="page">
+                  <!--<mat-icon>apple</mat-icon>--><span>Enviados</span>
+              </a>
+              <a mat-list-item routerLink="/activos-recibidos" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <!--<mat-icon>android</mat-icon>--><span>Recibidos</span>
+            </a>
+          </mat-nav-list>
+      </mat-expansion-panel>
+
+
+      <mat-expansion-panel [class.mat-elevation-z0]="true">
+        <mat-expansion-panel-header>
+            Hisórico
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/historico-enviados" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <span>Enviados</span>
+            </a>
+            <a mat-list-item routerLink="/historico-recibidos" routerLinkActive="active" ariaCurrentWhenActive="page">
+              <span>Recibidos</span>
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+
+      <a routerLink="/archivados" routerLinkActive="active" ariaCurrentWhenActive="page" mat-list-item>Archivados</a>
+
+
+      <span mat-list-item>Ajustes</span>
+      <a routerLink="/moificar-pass" routerLinkActive="active" ariaCurrentWhenActive="page" mat-list-item>Cambio contraseña</a>
+      <a routerLink="/datos-personales" routerLinkActive="active" ariaCurrentWhenActive="page" mat-list-item>Datos personales</a>
 
       </mat-nav-list>
     </mat-sidenav>

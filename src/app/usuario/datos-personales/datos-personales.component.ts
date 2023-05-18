@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DatosPersonalesService } from './service/datos-personales.service';
 
 @Component({
   selector: 'app-datos-personales',
@@ -6,6 +7,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./datos-personales.component.scss']
 })
 export class DatosPersonalesComponent {
+
+  token: string = "b9aacd288d087a59deb93f07d1bba4ee";
+
+  constructor(
+    private datosPersonalesService: DatosPersonalesService
+  ){
+
+  }
+  ngOnInit() {
+    this.cargarArchivados();
+  }
+
+
+  async cargarArchivados() {
+    this.datosPersonalesService.datosPersonales(this.token).subscribe( (res) => {
+      debugger;
+
+    });
+  }
 
   // export class PedidoCampanyaComponent implements OnInit {
   //   @Input() access_token: string;
