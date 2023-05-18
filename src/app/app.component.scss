@@ -1,12 +1,26 @@
 main {
   margin: 10px 0px 0px 10px;
-  height: calc(100vh - 144px);
+  height: calc(100vh - 138px);
 }
 
 // PARA PONER EL MENU A LA IZQUIERDA
 // .menu-spacer {
 //   flex: 1 1 auto;
 // }
+
+div.derecha{
+  position: absolute;
+  top: 14px;
+  right: 15px;
+}
+
+mat-toolbar-row{
+  width: 100vw !important;
+}
+
+.btn-login{
+  float: right;
+}
 
 a{
   text-decoration: none;

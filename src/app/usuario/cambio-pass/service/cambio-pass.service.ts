@@ -17,9 +17,10 @@ export class CambioPassService {
       .set('Accept', 'application/json')
       .set('Authorization', `Bearer ${token}`);
 
-    const parametros = new HttpParams()
-      .set("passwordO", passwordOld)
-      .set("passwordN", passwordNew);
+    const parametros = {
+      passO: passwordOld,
+      passN: passwordNew
+    };
 
     return this.http.put<any>(`${URL}/user/mod-pass`, parametros, {headers});
   }

@@ -13,9 +13,10 @@ export class CrearService {
     usuario: string,
     password: string) {
 
-    const parametros = new HttpParams()
-      .set("usuario", usuario)
-      .set("password", password);
+    const parametros = {
+      usuario: usuario,
+      password: password
+    }
 
     return this.http.put<any>(`${URL}/user/crear`, parametros);
   }

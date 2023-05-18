@@ -24,4 +24,9 @@ export class AppComponent {
   }
   title = 'quetedebo-front';
 
+  cerrarSesion(){
+    localStorage.removeItem('token');
+    window.location.href = window.location.origin + "/";
+  }
+
 }

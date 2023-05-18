@@ -10,6 +10,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 // import { HttpClient } from '@angular/common/http';
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -18,7 +19,15 @@ import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenu, MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 
+
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -65,6 +74,9 @@ export function createTranslateLoader(http: HttpClient) {
     CobroComponent
   ],
   imports: [
+    MatInputModule,
+    MatCheckboxModule,
+    MatSlideToggleModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -76,8 +88,13 @@ export function createTranslateLoader(http: HttpClient) {
     MatButtonModule,
     MatExpansionModule,
     MatTooltipModule,
+    MatDialogModule,
+    MatSnackBarModule,
     HttpClientModule,
     FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
     TranslateModule.forRoot({
       defaultLanguage: "en",
       loader: {
@@ -87,7 +104,7 @@ export function createTranslateLoader(http: HttpClient) {
       }
     })
   ],
-  providers: [],
+  providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

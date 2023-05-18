@@ -1,1 +1,85 @@
-<p>cambio-pass works!</p>
+<!-- AQUI ESTARÁ EL FORMULARIO DE CREACIÓN DEL USUARIO (SIN LO DATOS PERSONALES) -->
+<div class="contenedor-principal">
+  <section>
+    <h2>Modificar contraseña</h2>
+    <article>
+      <mat-form-field hintLabel="Mínimo 6 carácteres">
+        <mat-label>Contraseña actual</mat-label>
+        <input
+          matInput
+          #p1
+          [type]="hideActual ? 'password' : 'text'"
+          [formControl]="passActual"
+          required
+        />
+        <mat-error *ngIf="passActual.invalid">{{ errorPassActual() }}</mat-error>
+        <mat-hint align="end">{{ p1.value.length }}/6</mat-hint>
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hideActual = !hideActual"
+          [attr.aria-label]="'Ocultar password'"
+          [attr.aria-pressed]="hideActual"
+        >
+          <mat-icon>{{ hideActual ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </article>
+
+    <article>
+      <mat-form-field hintLabel="Mínimo 6 carácteres">
+        <mat-label>Contraseña nueva:</mat-label>
+        <input
+          matInput
+          #p2
+          [type]="hideNueva ? 'password' : 'text'"
+          [formControl]="passNuevo"
+          required
+        />
+        <mat-error *ngIf="passNuevo.invalid">{{ errorPassNuevo() }}</mat-error>
+        <mat-hint align="end">{{ p2.value.length }}/6</mat-hint>
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hideNueva = !hideNueva"
+          [attr.aria-label]="'Ocultar password'"
+          [attr.aria-pressed]="hideNueva"
+        >
+          <mat-icon>{{ hideNueva ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </article>
+
+    <article>
+      <mat-form-field hintLabel="Mínimo 6 carácteres">
+        <mat-label>Confirmar contraseña</mat-label>
+        <input
+          matInput
+          #p3
+          [type]="hideConfirmar ? 'password' : 'text'"
+          [formControl]="passConfirmar"
+          required
+        />
+        <mat-error *ngIf="passConfirmar.invalid">{{ errorPassConfirmar() }}</mat-error>
+        <mat-hint align="end">{{ p3.value.length }}/6</mat-hint>
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hideConfirmar = !hideConfirmar"
+          [attr.aria-label]="'Ocultar password'"
+          [attr.aria-pressed]="hideConfirmar"
+        >
+          <mat-icon>{{ hideConfirmar ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </article>
+
+    <article>
+      <button mat-fab extended color="primary" (click)="btnModificarContrasenya()">
+        <mat-icon>gesture</mat-icon>
+        Modificar contraseña
+      </button>
+    </article>
+  </section>
+</div>
+
