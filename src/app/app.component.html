@@ -16,19 +16,38 @@
         <a routerLink="/inicio" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>{{ "INICIO" | translate }}</a>
         <a routerLink="/quienes-somos" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Quienes Somos</a>
         <a routerLink="/contacto" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Contacto</a>
+
+        <a mat-button routerLinkActive="active" ariaCurrentWhenActive="page" [matMenuTriggerFor]="menuActivo" fxHide.lt-md>Activos</a>
+        <mat-menu #menuActivo="matMenu" xPosition="after">
+          <a routerLink="/activos-enviados" routerLinkActive="active" ariaCurrentWhenActive="page" mat-menu-item>Enviados</a>
+          <a routerLink="/activos-recibidos" routerLinkActive="active" ariaCurrentWhenActive="page" mat-menu-item>Recibidos</a>
+        </mat-menu>
+
+        <a mat-button routerLinkActive="active" ariaCurrentWhenActive="page" [matMenuTriggerFor]="menuHistorico" fxHide.lt-md>Histórico</a>
+        <mat-menu #menuHistorico="matMenu" xPosition="after">
+          <a routerLink="/historico-enviados" routerLinkActive="active" ariaCurrentWhenActive="page" mat-menu-item>Enviados</a>
+          <a routerLink="/historico-recibidos" routerLinkActive="active" ariaCurrentWhenActive="page" mat-menu-item>Recibidos</a>
+        </mat-menu>
+
+        <a routerLink="/archivados" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Archivados</a>
+        <a routerLink="/crear-usuario" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Crear Usuario</a>
         <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Login</a>
+
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
+
 
   <mat-sidenav-container fxFlexFill>
     <mat-sidenav #sidenav>
       <mat-nav-list>
         <!--<a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>-->
-        <a routerLink="/inicio" routerLinkActive="active" ariaCurrentWhenActive="page" mat-list-item>Inicio</a>
+        <a routerLink="/inicio" routerLinkActive="active" ariaCurrentWhenActive="page" mat-list-item>
+          <mat-icon>home</mat-icon> Inicio</a>
         <a routerLink="/quienes-somos" routerLinkActive="active" ariaCurrentWhenActive="page" mat-list-item>Quienes Somos</a>
         <a routerLink="/contacto" routerLinkActive="active" ariaCurrentWhenActive="page" mat-list-item>Contacto</a>
         <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" mat-list-item>Login</a>
+
       </mat-nav-list>
     </mat-sidenav>
 
@@ -41,6 +60,8 @@
 
   <footer fxflexFill>Aquí va el footer</footer>
 </div>
+
+
 <!--
 <h1>Que te debo!</h1>
 <nav>

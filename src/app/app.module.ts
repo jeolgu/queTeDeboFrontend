@@ -15,6 +15,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatMenu, MatMenuModule } from '@angular/material/menu';
+
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -28,10 +32,13 @@ import { CrearCobroComponent } from './cobros/crear/crear.component';
 import { CrearUsuarioComponent } from './usuario/crear/crear.component';
 import { DatosPersonalesComponent } from './usuario/datos-personales/datos-personales.component';
 import { CambioPassComponent } from './usuario/cambio-pass/cambio-pass.component';
-import { EnviadosComponent } from './cobros/activos/enviados/enviados.component';
-import { RecibidosComponent } from './cobros/activos/recibidos/recibidos.component';
-import { ArchivadosComponent } from './cobros/archivados/archivados.component';
+
 import { CobroComponent } from './cobros/cobro/cobro.component';
+import { ActivosEnviadosComponent } from './cobros/activos/enviados/enviados.component';
+import { ActivosRecibidosComponent } from './cobros/activos/recibidos/recibidos.component';
+import { HistoricoEnviadosComponent } from './cobros/historico/enviados/enviados.component';
+import { HistoricoRecibidosComponent } from './cobros/historico/recibidos/recibidos.component';
+import { ArchivadosComponent } from './cobros/archivados/archivados.component';
 
 //eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 export function createTranslateLoader(http: HttpClient) {
@@ -50,8 +57,10 @@ export function createTranslateLoader(http: HttpClient) {
     CrearUsuarioComponent,
     DatosPersonalesComponent,
     CambioPassComponent,
-    EnviadosComponent,
-    RecibidosComponent,
+    ActivosEnviadosComponent,
+    ActivosRecibidosComponent,
+    HistoricoEnviadosComponent,
+    HistoricoRecibidosComponent,
     ArchivadosComponent,
     CobroComponent
   ],
@@ -59,11 +68,14 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatMenuModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
     MatListModule,
     MatButtonModule,
+    MatExpansionModule,
+    MatTooltipModule,
     HttpClientModule,
     FlexLayoutModule,
     TranslateModule.forRoot({

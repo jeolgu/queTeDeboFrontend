@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-export const URL = "127.0.0.1:8000/api"; // conexión al server simfony
+export const URL = "http://127.0.0.1:8000/api"; // conexión al server simfony
+// export const URL = "http://localhost:8000/api"; // conexión al server simfony
 
 @Pipe({ name: 'diasSemana' })
 export class DiasSemana implements PipeTransform {

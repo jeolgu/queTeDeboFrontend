@@ -14,7 +14,7 @@ export class TranslateConfigService {
   }
 
   getDefaultLanguage() {
-    debugger;
+    //debugger;
     if (this.currentLang) {
       this.translate.setDefaultLang(this.currentLang);
     } else {

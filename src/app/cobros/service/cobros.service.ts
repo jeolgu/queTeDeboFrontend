@@ -15,9 +15,11 @@ export class CobrosService {
 
     const headers = new HttpHeaders()
       .set('Accept', 'application/json')
+      // .set('Content-Type', 'text/plain')
+      // .set('Access-Control-Allow-Origin', '*')
       .set('Authorization', `Bearer ${token}`);
 
-    return this.http.post<ICobro>(`${URL}/cobro/activos-enviados`, null, { headers });
+    return this.http.post<any>(`${URL}/cobro/activos-enviados`, null, { headers });
   }
 
   activosRecibidos( token: string ) {
