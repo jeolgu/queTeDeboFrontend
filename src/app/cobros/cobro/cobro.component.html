@@ -1,1 +1,62 @@
-<p>cobro works!</p>
+<!--<p>cobro works! holi</p>
+<p>{{ cobro?.titulo }}</p>
+-->
+<div class="card">
+  <div class="card_image">
+    <span class="note" [hidden]="pendienteRevision">Pendiente de revisión</span>
+    <img [src]="imagen" />
+    <span class="card_price"><span>&euro;</span>{{ cobro?.importe }}</span>
+    <div class="opciones">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [disabled]="menu_pedir_revision" (click)="pedirRevision()">
+          <mat-icon>speaker_notes</mat-icon>
+          <span>Pedir Revisión</span>
+        </button>
+        <button mat-menu-item [disabled]="menu_completar" (click)="completarCobro()">
+          <mat-icon>done_all</mat-icon>
+          <span>Completar</span>
+        </button>
+        <button mat-menu-item [disabled]="menu_archivar" (click)="archivarCobro()">
+          <mat-icon>turned_in</mat-icon>
+          <span>Archivar</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+  <h2 class="card_title">{{ cobro?.titulo }}</h2>
+  <div class="card_content">
+    <div class="card_text">
+      <p>
+        {{ cobro?.texto }}
+      </p>
+      <p>
+        Dig into the freshest veggies of the season! This salad-in-a-jar
+        features a mixture of leafy greens and seasonal vegetables, fresh from
+        the farmer's market.
+      </p>
+      <hr />
+      <p>
+        Served with your choice of dressing on the side:
+        <strong>housemade ranch</strong>,
+        <strong>cherry balsamic vinaigrette</strong>,
+        <strong>creamy chipotle</strong>,
+        <strong>avocado green goddess</strong>, or
+        <strong>honey mustard</strong>. Add your choice of protein for $2 more.
+      </p>
+    </div>
+  </div>
+  <div class="card_footer">
+    <span><h5>Creador: {{ cobro?.nombre_creador }}</h5></span>
+    <span><h5>
+      <div *ngIf="!cobro?.completado else completadoArchivado">
+        Creado: {{ cobro?.creacion | date: 'd-M-YYYY '}}
+      </div>
+      <ng-template #completadoArchivado>
+        Completado: {{ cobro?.fecha_completado | date: 'd-M-YYYY '}}
+      </ng-template>
+    </h5></span>
+  </div>
+</div>

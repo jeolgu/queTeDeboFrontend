@@ -3,6 +3,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from "@angular/router";
 import { FormControl, Validators } from '@angular/forms';
 import { LoginService } from './services/login.service';
+import { Utilidades } from 'src/app/utilidades';
+import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-login',
@@ -18,8 +20,9 @@ export class LoginComponent {
 
   constructor(
     private loginService: LoginService,
-    private alertaSnackBar: MatSnackBar,
-    private router: Router) { }
+    private utilidades: Utilidades,
+    private router: Router,
+    private general: GeneralService) { }
 
   ngOnInit() {
 
@@ -61,17 +64,17 @@ export class LoginComponent {
       this.loginService.login(usuario_nuevo, contrasenya).subscribe(
         (res) => {
           if(!res.ok) {
-            this.lanzarAlerta(res.message);
+            this.utilidades.lanzarAlerta(res.message);
           }
           else {
             this.pass.reset();
             this.email.reset();
 
-            // OCULTAR MENU DE LOGIN (REACTIVO)
-
-            // MOSTRAR LOGOUT (REACTIVO)
+            // OCULTAR MENU DE LOGIN (REACTIVO) Y  MOSTRAR LOGOUT (REACTIVO)
+            this.general.setLogueado(true);
 
             // CREAR REACTIVA DEL TOKEN
+            this.general.setToken(res.token);
 
             // SI GUARDAR LOGIN (GUARDAR EL TOKEN EN LOCALSTORAGE)
             if(this.recordar) localStorage.setItem("token", res.token);
@@ -82,23 +85,23 @@ export class LoginComponent {
         },
         (err) => {
           let msg = (err.message) ? err.message : "Ha habído un error inesperado. Intentalo de nuevo más tarde";
-          this.lanzarAlerta(msg);
+          this.utilidades.lanzarAlerta(msg);
         }
       );
     }
     else {
-      this.lanzarAlerta(msg);
+      this.utilidades.lanzarAlerta(msg);
     }
   }
 
 
-  lanzarAlerta(msg: string) {
-    this.alertaSnackBar.open(msg, undefined, {
-      horizontalPosition: "center",
-      verticalPosition: "top",
-      duration: 3000,
-    });
-  }
+  // lanzarAlerta(msg: string) {
+  //   this.alertaSnackBar.open(msg, undefined, {
+  //     horizontalPosition: "center",
+  //     verticalPosition: "top",
+  //     duration: 3000,
+  //   });
+  // }
 
   mostrarCrearUsuario(){
     this.router.navigate(['crear-usuario']);

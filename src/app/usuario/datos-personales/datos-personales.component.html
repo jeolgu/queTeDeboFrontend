@@ -1,1 +1,89 @@
-<p>datos-personales works!</p>
+<!-- AQUI ESTARÁ EL FORMULARIO DE CREACIÓN DEL USUARIO (SIN LO DATOS PERSONALES) -->
+<div class="contenedor-principal">
+  <section>
+    <h2>Datos personales</h2>
+    <article>
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Nombre" [(ngModel)]="nombre" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Apellidos</mat-label>
+        <input matInput placeholder="Apellidos" [(ngModel)]="apellidos" />
+      </mat-form-field>
+
+      <mat-form-field floatLabel="always">
+        <mat-label>Edad</mat-label>
+        <input
+          matInput
+          type="number"
+          class="alineado-derecha"
+          placeholder="25"
+          [(ngModel)]="edad"
+        />
+      </mat-form-field>
+    </article>
+
+    <article>
+      <mat-form-field>
+        <mat-label>Dirección</mat-label>
+        <input
+          matInput
+          placeholder="Paseo Germanías 2, 1º"
+          [(ngModel)]="direccion"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Localidad</mat-label>
+        <input matInput placeholder="Gandia" [(ngModel)]="localidad" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Código postal</mat-label>
+        <input matInput placeholder="46702" [(ngModel)]="cp" />
+      </mat-form-field>
+    </article>
+
+    <article>
+      <mat-form-field>
+        <mat-label>País</mat-label>
+        <input matInput placeholder="España" [(ngModel)]="pais" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Idioma predefinido</mat-label>
+        <input
+          matInput
+          placeholder="Español"
+          [(ngModel)]="idioma_predefinido"
+        />
+      </mat-form-field>
+    </article>
+
+    <article>
+      <button
+        class="btn-guardar"
+        mat-fab
+        extended
+        color="primary"
+        (click)="btnGuardarDatosPersonales()"
+      >
+        <mat-icon>send</mat-icon>
+        Guardar
+      </button>
+
+      <button
+        mat-fab
+        extended
+        color="primary"
+        (click)="btnRefrescarValoresAnteriores()"
+
+      >
+        <mat-icon>settings_backup_restore</mat-icon>
+        Restaurar datos anteriores
+      </button>
+    </article>
+  </section>
+</div>

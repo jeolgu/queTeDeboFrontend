@@ -15,20 +15,20 @@ export class DatosPersonalesService {
       .set('Accept', 'application/json')
       .set('Authorization', `Bearer ${token}`);
 
-    return this.http.post<IUsuario>(`${URL}/user/datos-personales`, null, { headers });
+    return this.http.post<any>(`${URL}/user/datos-personales`, null, { headers });
   }
 
   /* REVISAR */
   guardarDatosPersonales(token: string,
-    datos_personales: IUsuario ) {
+    datos_personales: any ) {
 
     const headers = new HttpHeaders()
       .set('Accept', 'application/json')
       .set('Authorization', `Bearer ${token}`);
 
-    const parametros = new HttpParams()
-      .set("datos_personales", JSON.stringify(datos_personales));
+    // const parametros = new HttpParams()
+    //   .set("datos_personales", JSON.stringify(datos_personales));
 
-    return this.http.put<IUsuario>(`${URL}/user/datos-personales`, parametros, { headers });
+    return this.http.put<any>(`${URL}/user/datos-personales`, JSON.stringify(datos_personales), { headers });
   }
 }

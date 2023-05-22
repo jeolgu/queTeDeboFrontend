@@ -17,29 +17,31 @@
         <a routerLink="/quienes-somos" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Quienes Somos</a>
         <a routerLink="/contacto" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Contacto</a>
 
-        <a mat-button routerLinkActive="active" ariaCurrentWhenActive="page" [matMenuTriggerFor]="menuActivo" fxHide.lt-md>Activos</a>
+        <a [hidden]="mostrar" routerLink="/crear-cobro" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Crear cobro</a>
+
+        <a [hidden]="mostrar" mat-button routerLinkActive="active" ariaCurrentWhenActive="page" [matMenuTriggerFor]="menuActivo" fxHide.lt-md>Activos</a>
         <mat-menu #menuActivo="matMenu" xPosition="after">
           <a routerLink="/activos-enviados" routerLinkActive="active" ariaCurrentWhenActive="page" mat-menu-item>Enviados</a>
           <a routerLink="/activos-recibidos" routerLinkActive="active" ariaCurrentWhenActive="page" mat-menu-item>Recibidos</a>
         </mat-menu>
 
-        <a mat-button routerLinkActive="active" ariaCurrentWhenActive="page" [matMenuTriggerFor]="menuHistorico" fxHide.lt-md>Histórico</a>
+        <a [hidden]="mostrar" mat-button routerLinkActive="active" ariaCurrentWhenActive="page" [matMenuTriggerFor]="menuHistorico" fxHide.lt-md>Histórico</a>
         <mat-menu #menuHistorico="matMenu" xPosition="after">
           <a routerLink="/historico-enviados" routerLinkActive="active" ariaCurrentWhenActive="page" mat-menu-item>Enviados</a>
           <a routerLink="/historico-recibidos" routerLinkActive="active" ariaCurrentWhenActive="page" mat-menu-item>Recibidos</a>
         </mat-menu>
 
-        <a routerLink="/archivados" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Archivados</a>
+        <a [hidden]="mostrar" routerLink="/archivados" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Archivados</a>
         <!--<a routerLink="/crear-usuario" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Crear Usuario</a>-->
         <div class="derecha">
-          <a mat-button routerLinkActive="active" ariaCurrentWhenActive="page" [matMenuTriggerFor]="menuAjustes" fxHide.lt-md>Ajustes</a>
+          <a [hidden]="mostrar" mat-button routerLinkActive="active" ariaCurrentWhenActive="page" [matMenuTriggerFor]="menuAjustes" fxHide.lt-md>Ajustes</a>
           <mat-menu #menuAjustes="matMenu" xPosition="after">
             <a routerLink="/modificar-pass" routerLinkActive="active" ariaCurrentWhenActive="page" mat-menu-item>Cambio contraseña</a>
             <a routerLink="/datos-personales" routerLinkActive="active" ariaCurrentWhenActive="page" mat-menu-item>Datos personales</a>
           </mat-menu>
 
-          <a class='btn-login' routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Entrar</a>
-          <a class='btn-logout' (click)="cerrarSesion()" routerLink="/login" hidden="true" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Salir</a>
+          <a class='btn-login' [hidden]="logueado" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Entrar</a>
+          <a class='btn-logout' [hidden]="mostrar" (click)="cerrarSesion()" routerLink="/login" hidden="true" routerLinkActive="active" ariaCurrentWhenActive="page" mat-button>Salir</a>
         </div>
       </div>
     </mat-toolbar-row>
@@ -103,7 +105,7 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 
-  <footer fxflexFill>Aquí va el footer</footer>
+  <app-footer></app-footer>
 </div>
 
 

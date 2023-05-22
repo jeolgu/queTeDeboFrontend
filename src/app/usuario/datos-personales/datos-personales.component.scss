@@ -1,0 +1,45 @@
+// .example-container mat-form-field + mat-form-field {
+//   margin-left: 8px;
+// }
+
+.contenedor-principal {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+section {
+  margin: 0px auto;
+  width: fit-content;
+}
+
+article {
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  width: 350px !important;
+  margin-right: 25px;
+}
+
+.alineado-derecha {
+  text-align: right;
+  --moz-appearance: textfield;
+  &::--webkit-outer-spin-button {
+    display: none;
+  }
+  &::--webkit-inner-spin-button {
+    display: none;
+  }
+}
+
+.btn-guardar{
+  margin-right: 30px;
+}
+
+
+@media (min-width: 775px) and (max-width: 1152px) {
+  mat-form-field{
+    display: block;
+  }
+}

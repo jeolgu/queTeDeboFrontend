@@ -1,1 +1,81 @@
-<p>crear works!</p>
+<!-- AQUI ESTARÁ EL FORMULARIO DE CREACIÓN DEL USUARIO (SIN LO DATOS PERSONALES) -->
+<div class="contenedor-principal">
+  <section>
+    <h2>Crear cobro</h2>
+    <article>
+      <mat-form-field floatLabel="always">
+        <mat-label>Receptor (poner email)</mat-label>
+        <input matInput placeholder="Nombre" [(ngModel)]="receptor" />
+      </mat-form-field>
+    </article>
+
+    <article>
+      <mat-form-field class="example-form-field" floatLabel="always">
+        <mat-label>Selecciona una fecha</mat-label>
+        <input matInput [matDatepicker]="datepicker" [(ngModel)]="creacion" [min]="minima_fecha" [max]="maxima_fecha" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="datepicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #datepicker >
+          <mat-datepicker-actions>
+            <button mat-button matDatepickerCancel>Cancelar</button>
+            <button mat-raised-button color="primary" matDatepickerApply>
+              Aceptar
+            </button>
+          </mat-datepicker-actions>
+        </mat-datepicker>
+      </mat-form-field>
+    </article>
+
+    <article>
+      <mat-form-field floatLabel="always">
+        <mat-label>Titulo</mat-label>
+        <input
+          matInput
+          placeholder="Cena fin de semana"
+          [(ngModel)]="titulo"
+        />
+      </mat-form-field>
+    </article>
+
+    <article>
+      <mat-form-field floatLabel="always">
+        <mat-label>Texto</mat-label>
+        <textarea matInput placeholder="Parte del pago de la cena reservada para el sábado con los amigos" [(ngModel)]="texto"></textarea>
+      </mat-form-field>
+    </article>
+
+    <article>
+      <mat-form-field floatLabel="always">
+        <mat-label>Importe</mat-label>
+        <input
+          matInput
+          type="number"
+          class="alineado-derecha"
+          placeholder="25"
+          [(ngModel)]="importe"
+        />
+      </mat-form-field>
+    </article>
+
+    <article>
+      <button
+        class="btn-guardar"
+        mat-fab
+        extended
+        color="primary"
+        (click)="btnCrearCobro()"
+      >
+        <mat-icon>save</mat-icon>
+        Guardar
+      </button>
+
+      <button mat-fab extended color="primary" (click)="vaciarDatos()">
+        <mat-icon>undo</mat-icon>
+        Vaciar datos del cobro
+      </button>
+    </article>
+  </section>
+</div>

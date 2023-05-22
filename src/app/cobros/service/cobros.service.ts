@@ -28,7 +28,7 @@ export class CobrosService {
       .set('Accept', 'application/json')
       .set('Authorization', `Bearer ${token}`);
 
-    return this.http.post<ICobro>(`${URL}/cobro/activos-recibidos`, null, { headers });
+    return this.http.post<any>(`${URL}/cobro/activos-recibidos`, null, { headers });
   }
 
   historicoEnviados( token: string ) {
@@ -37,7 +37,7 @@ export class CobrosService {
       .set('Accept', 'application/json')
       .set('Authorization', `Bearer ${token}`);
 
-    return this.http.post<ICobro>(`${URL}/cobro/historico-enviados`, null, { headers });
+    return this.http.post<any>(`${URL}/cobro/historico-enviados`, null, { headers });
   }
 
   historicoRecibidos( token: string ) {
@@ -46,7 +46,7 @@ export class CobrosService {
       .set('Accept', 'application/json')
       .set('Authorization', `Bearer ${token}`);
 
-    return this.http.post<ICobro>(`${URL}/cobro/historico-recibidos`, null, { headers });
+    return this.http.post<any>(`${URL}/cobro/historico-recibidos`, null, { headers });
   }
 
   archivados( token: string ) {
@@ -55,21 +55,21 @@ export class CobrosService {
       .set('Accept', 'application/json')
       .set('Authorization', `Bearer ${token}`);
 
-    return this.http.post<ICobro>(`${URL}/cobro/almacenados`, null, { headers });
+    return this.http.post<any>(`${URL}/cobro/almacenados`, null, { headers });
   }
 
   // SET
   // CREAR COBRO
-  crearCobro( token: string, cobro: ICobro ) {
+  crearCobro( token: string, cobro: any ) {
 
     const headers = new HttpHeaders()
       .set('Accept', 'application/json')
       .set('Authorization', `Bearer ${token}`);
 
-    const parametros = new HttpParams()
-      .set("cobro", JSON.stringify(cobro));
+    // const parametros = new HttpParams()
+    //   .set("cobro", JSON.stringify(cobro));
 
-    return this.http.put<any>(`${URL}/cobro/crear`, parametros, { headers });
+    return this.http.put<any>(`${URL}/cobro/crear`, JSON.stringify(cobro), { headers });
   }
 
   // PASAR A PENDIENTE DE REVISAR
@@ -79,21 +79,29 @@ export class CobrosService {
       .set('Accept', 'application/json')
       .set('Authorization', `Bearer ${token}`);
 
-    const parametros = new HttpParams()
-      .set("cobro", cobro);
+    // const parametros = new HttpParams()
+    //   .set("cobro", cobro);
+
+    const parametros = {
+      cobro: cobro
+    };
 
     return this.http.put<any>(`${URL}/cobro/revisar`, parametros, { headers });
   }
 
   // PASAR A COMPLETADO
-  setCompletado( token: string, cobro: number ) {
+  setCompletado( token: string, cobro: any ) {
 
     const headers = new HttpHeaders()
       .set('Accept', 'application/json')
       .set('Authorization', `Bearer ${token}`);
 
-    const parametros = new HttpParams()
-      .set("cobro", cobro);
+    // const parametros = new HttpParams()
+    //   .set("cobro", cobro);
+
+    const parametros = {
+      cobro: cobro
+    };
 
     return this.http.put<any>(`${URL}/cobro/completar`, parametros, { headers });
   }
@@ -105,8 +113,12 @@ export class CobrosService {
       .set('Accept', 'application/json')
       .set('Authorization', `Bearer ${token}`);
 
-    const parametros = new HttpParams()
-      .set("cobro", cobro);
+    // const parametros = new HttpParams()
+    //   .set("cobro", cobro);
+
+    const parametros = {
+      cobro: cobro
+    };
 
     return this.http.put<any>(`${URL}/cobro/archivar`, parametros, { headers });
   }

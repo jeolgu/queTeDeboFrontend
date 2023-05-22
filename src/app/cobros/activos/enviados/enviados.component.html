@@ -1,1 +1,13 @@
-<p>enviados works!</p>
+<section>
+  <div class="main">
+    <ul class="cards">
+      <li class="cards_item" *ngFor="let cobro of cobros">
+        <app-cobro
+          [cobro]="cobro"
+          tipo="activos_enviados"
+          style="display: inline-block"
+        ></app-cobro>
+      </li>
+    </ul>
+  </div>
+</section>

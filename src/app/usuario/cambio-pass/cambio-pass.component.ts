@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from "@angular/router";
 import { FormControl, Validators } from '@angular/forms';
 import { CambioPassService } from './service/cambio-pass.service';
+import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-cambio-pass',
@@ -14,7 +15,7 @@ export class CambioPassComponent {
   hideActual: boolean = true;
   hideNueva: boolean = true;
   hideConfirmar: boolean = true;
-  token: string = "03135f3e4123031e10aa8e67f38f583f";
+  token: string = "";
 
   passActual = new FormControl('', [Validators.required, Validators.minLength(6)]);
   passNuevo = new FormControl('', [Validators.required, Validators.minLength(6)]);
@@ -23,9 +24,12 @@ export class CambioPassComponent {
   constructor(
     private cambioPassService: CambioPassService,
     private alertaSnackBar: MatSnackBar,
-    private router: Router) { }
+    private router: Router,
+    private generalService: GeneralService) { }
 
   ngOnInit() {
+
+    this.generalService.recibir_token.subscribe((token) => { this.token = token; });
 
   }
 
