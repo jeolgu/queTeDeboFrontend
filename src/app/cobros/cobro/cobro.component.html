@@ -3,7 +3,7 @@
 -->
 <div class="card">
   <div class="card_image">
-    <span class="note" [hidden]="pendienteRevision">Pendiente de revisión</span>
+    <span class="note" [hidden]="pendienteRevision">{{ "TXT_PENDIENTE" | translate | titlecase }}</span>
     <img [src]="imagen" />
     <span class="card_price"><span>&euro;</span>{{ cobro?.importe }}</span>
     <div class="opciones">
@@ -13,15 +13,15 @@
       <mat-menu #menu="matMenu">
         <button mat-menu-item [disabled]="menu_pedir_revision" (click)="pedirRevision()">
           <mat-icon>speaker_notes</mat-icon>
-          <span>Pedir Revisión</span>
+          <span>{{"TXT_REVISION" | translate | titlecase }}</span>
         </button>
         <button mat-menu-item [disabled]="menu_completar" (click)="completarCobro()">
           <mat-icon>done_all</mat-icon>
-          <span>Completar</span>
+          <span>{{ "TXT_COMPLETAR" | translate | titlecase }}</span>
         </button>
         <button mat-menu-item [disabled]="menu_archivar" (click)="archivarCobro()">
           <mat-icon>turned_in</mat-icon>
-          <span>Archivar</span>
+          <span>{{ "TXT_ARCHIVAR" | translate | titlecase }}</span>
         </button>
       </mat-menu>
     </div>
@@ -49,13 +49,13 @@
     </div>
   </div>
   <div class="card_footer">
-    <span><h5>Creador: {{ cobro?.nombre_creador }}</h5></span>
+    <span><h5>{{ "TXT_CREADOR" | translate | titlecase  }}: {{ cobro?.nombre_creador }}</h5></span>
     <span><h5>
       <div *ngIf="!cobro?.completado else completadoArchivado">
-        Creado: {{ cobro?.creacion | date: 'd-M-YYYY '}}
+        {{ "TXT_CREADO" | translate | titlecase }}: {{ cobro?.creacion | date: 'd-M-YYYY '}}
       </div>
       <ng-template #completadoArchivado>
-        Completado: {{ cobro?.fecha_completado | date: 'd-M-YYYY '}}
+        {{ "TXT_COMPLETADO" | translate | titlecase }}: {{ cobro?.fecha_completado | date: 'd-M-YYYY '}}
       </ng-template>
     </h5></span>
   </div>

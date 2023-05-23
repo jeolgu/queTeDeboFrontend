@@ -1,17 +1,17 @@
 <!-- AQUI ESTARÁ EL FORMULARIO DE CREACIÓN DEL USUARIO (SIN LO DATOS PERSONALES) -->
 <div class="contenedor-principal">
   <section>
-    <h2>Crear cobro</h2>
+    <h2>{{ "TITULO_CREAR_COBRO" | translate }}</h2>
     <article>
       <mat-form-field floatLabel="always">
         <mat-label>Receptor (poner email)</mat-label>
-        <input matInput placeholder="Nombre" [(ngModel)]="receptor" />
+        <input matInput placeholder='Nombre' [(ngModel)]="receptor" />
       </mat-form-field>
     </article>
 
     <article>
       <mat-form-field class="example-form-field" floatLabel="always">
-        <mat-label>Selecciona una fecha</mat-label>
+        <mat-label>{{ "CREAR_COBRO_FECHA" | translate }}</mat-label>
         <input matInput [matDatepicker]="datepicker" [(ngModel)]="creacion" [min]="minima_fecha" [max]="maxima_fecha" />
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle
@@ -20,9 +20,9 @@
         ></mat-datepicker-toggle>
         <mat-datepicker #datepicker >
           <mat-datepicker-actions>
-            <button mat-button matDatepickerCancel>Cancelar</button>
+            <button mat-button matDatepickerCancel>{{ "BTN_CANCELAR" | translate | titlecase }}</button>
             <button mat-raised-button color="primary" matDatepickerApply>
-              Aceptar
+              {{ "BTN_ACEPTAR" | translate | titlecase }}
             </button>
           </mat-datepicker-actions>
         </mat-datepicker>
@@ -31,7 +31,7 @@
 
     <article>
       <mat-form-field floatLabel="always">
-        <mat-label>Titulo</mat-label>
+        <mat-label>{{ "CREAR_COBRO_TITULO" | translate | titlecase }}</mat-label>
         <input
           matInput
           placeholder="Cena fin de semana"
@@ -42,14 +42,14 @@
 
     <article>
       <mat-form-field floatLabel="always">
-        <mat-label>Texto</mat-label>
+        <mat-label>{{ "CREAR_COBRO_TEXTO" | translate | titlecase }}</mat-label>
         <textarea matInput placeholder="Parte del pago de la cena reservada para el sábado con los amigos" [(ngModel)]="texto"></textarea>
       </mat-form-field>
     </article>
 
     <article>
       <mat-form-field floatLabel="always">
-        <mat-label>Importe</mat-label>
+        <mat-label>{{ "CREAR_COBRO_IMPORTE" | translate | titlecase }}</mat-label>
         <input
           matInput
           type="number"
@@ -69,12 +69,12 @@
         (click)="btnCrearCobro()"
       >
         <mat-icon>save</mat-icon>
-        Guardar
+        {{ "BTN_GUARDAR" | translate | uppercase }}
       </button>
 
       <button mat-fab extended color="primary" (click)="vaciarDatos()">
         <mat-icon>undo</mat-icon>
-        Vaciar datos del cobro
+        {{ "VACIAR_DATOS" | translate | titlecase }}
       </button>
     </article>
   </section>

@@ -3,5 +3,25 @@
     "USUARIO": "Usuario",
     "PASS": "Contraseña",
     "SAVE_LOGIN": "Recordar inicio de sesión",
-    "INICIO": "Principal"
+    "INICIO": "Principal",
+    "TXT_PENDIENTE": "Pendiente de revisión",
+    "TXT_CREADOR": "Creador",
+    "TXT_CREADO": "Creado",
+    "TXT_COMPLETADO": "Completado",
+    "TXT_REVISION": "Pedir revisión",
+    "TXT_COMPLETAR": "Completar",
+    "TXT_ARCHIVAR": "Archivar",
+    "TITULO_CREAR_COBRO": "Crear cobro",
+    "PH_NOMBRE": "Nombre",
+    "CREAR_COBRO_FECHA": "Selecciona una fecha",
+    "BTN_CANCELAR": "Cancelar",
+    "BTN_ACEPTAR": "Aceptar",
+    "BTN_GUARDAR": "Guardar",
+    "BTN_VACIAR": "Vaciar datos",
+    "CREAR_COBRO_TITULO": "Título",
+    "CREAR_COBRO_TEXTO": "Texto",
+    "CREAR_COBRO_IMPORTE": "Importe",
+    "TXT_NO": "No",
+    "TXT_SI": "Sí"
+
 }

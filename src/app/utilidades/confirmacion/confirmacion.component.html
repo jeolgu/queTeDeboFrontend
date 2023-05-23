@@ -3,6 +3,6 @@
     <p>{{mensaje}}</p>
 </div>
 <div mat-dialog-actions>
-    <button mat-button (click)="cerrarDialogo()">No</button>
-    <button mat-button (click)="confirmado()" cdkFocusInitial>Sí</button>
+    <button mat-button (click)="cerrarDialogo()">{{ "TXT_NO" | translate | titlecase }}</button>
+    <button mat-button (click)="confirmado()" cdkFocusInitial>{{ "TXT_SI" | translate | titlecase }}</button>
 </div>
