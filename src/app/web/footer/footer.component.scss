@@ -1,11 +1,10 @@
-footer{
+footer {
   background-color: #3f51b5;
   color: white;
   height: 64px;
   text-align: center;
   border-radius: 3px;
 }
-
 
 .card svg {
   height: 25px;
@@ -17,14 +16,15 @@ footer{
   align-items: center;
   justify-content: center;
   background: #e7e7e7;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   overflow: hidden;
   height: 50px;
   width: 200px;
 }
 
-.card::before, .card::after {
+.card::before,
+.card::after {
   position: absolute;
   display: flex;
   align-items: center;
@@ -49,7 +49,7 @@ footer{
 }
 
 .card:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .card:hover span {
@@ -75,7 +75,7 @@ footer{
   width: 100%;
   height: 100%;
   color: whitesmoke;
-  font-family: 'Fira Mono', monospace;
+  font-family: "Fira Mono", monospace;
   font-size: 24px;
   font-weight: 700;
   opacity: 1;
@@ -104,6 +104,28 @@ footer{
 .card .social-link:hover {
   background-color: rgba(249, 244, 255, 0.774);
   animation: bounce_613 0.4s linear;
+}
+
+.logo {
+  position: relative;
+}
+
+.nombre{
+  position: absolute;
+  top: 20px;
+  left: 90px;
+  font-size: 1.5em;
+}
+.izquierda {
+  position: absolute;
+  top:6px;
+  left: 10px;
+}
+
+.derecha {
+  float: right;
+  top: 7px;
+  right: 10px;
 }
 
 @keyframes bounce_613 {
