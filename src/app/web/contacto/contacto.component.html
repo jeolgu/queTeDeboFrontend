@@ -1,1 +1,74 @@
-<p>contacto works!</p>
+<div class="contenedor-principal">
+  <section>
+    <article>
+      <h2>Ponerse en contacto</h2>
+      <article>
+        <p>
+          Utilice nuestro formulario para ponerse en contacto con nostros y le
+          responderemos en la mayor brevedad posible
+        </p>
+      </article>
+      <hr />
+      <article>
+        <mat-icon>place</mat-icon>
+        Avenida del grau 25, 3º, 1º<br>Gandia
+      </article>
+      <article>
+        <mat-icon>phone</mat-icon>
+        +34 655999999
+      </article>
+    </article>
+
+    <article>
+      <div>
+        <article>
+          <mat-form-field floatLabel="always">
+            <mat-label>Nombre</mat-label>
+            <input
+              matInput
+              placeholder="Nombre"
+              [formControl]="nombre"
+              required
+            />
+            <mat-error *ngIf="nombre.invalid">{{ errorNombre() }}</mat-error>
+          </mat-form-field>
+        </article>
+        <article>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="usuario@dominio.com"
+              [formControl]="correo"
+              required
+            />
+            <mat-error *ngIf="correo.invalid">{{ errorCorreo() }}</mat-error>
+          </mat-form-field>
+        </article>
+        <article>
+          <mat-form-field floatLabel="always">
+            <mat-label>Mensaje</mat-label>
+            <textarea
+              matInput
+              placeholder="Deseo recibir información al respecto"
+              [formControl]="mensaje"
+              required
+            ></textarea>
+            <mat-error *ngIf="mensaje.invalid">{{ errorMensaje() }}</mat-error>
+          </mat-form-field>
+        </article>
+        <article>
+          <mat-checkbox [formControl]="aceptar" required
+            >Acepto los términos de la empresa</mat-checkbox
+          >
+        </article>
+        <article>
+          <button mat-fab extended color="primary" (click)="enviarFormulario()">
+            <mat-icon>mail_outline</mat-icon>
+            Enviar
+          </button>
+        </article>
+      </div>
+    </article>
+  </section>
+</div>

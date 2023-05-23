@@ -23,6 +23,7 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(15px);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  display: inline-block;
 }
 
 .img-bx {
@@ -44,6 +45,10 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.content2{
+  text-align: justify;
 }
 
 .content {
@@ -105,4 +110,31 @@ body {
 .sci li a:hover {
   background: #03a9f4;
   color: #fff;
+}
+
+.contenedor-principal {
+  text-align: center;
+  padding-top: 25px;
+}
+
+section {
+  margin: 0px 25px;
+  width: fit-content;
+  display: inline-block;
+  background-color: #f2f1f1ec;
+  padding: 25px;
+  border-radius: 15px;
+
+}
+
+article {
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  width: 350px !important;
+}
+
+span.separacion{
+  margin-right: 25px;
 }
